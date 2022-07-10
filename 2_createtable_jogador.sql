@@ -4,7 +4,7 @@
 
 CREATE TABLE public.jogador
 (
-    id bigint NOT NULL DEFAULT nextval('jogador_id_seq'::regclass),
+     id bigint NOT NULL,
     nome_jogador character varying(200) COLLATE pg_catalog."default" NOT NULL,
     data_nascimento date,
     telefone character varying(12) COLLATE pg_catalog."default",
@@ -14,9 +14,4 @@ CREATE TABLE public.jogador
     atualizado_em timestamp with time zone NOT NULL,
     foto character varying(100) COLLATE pg_catalog."default",
     CONSTRAINT jogador_pkey PRIMARY KEY (id)
-)
-
-TABLESPACE pg_default;
-
-ALTER TABLE public.jogador
-    OWNER to postgres;
+);

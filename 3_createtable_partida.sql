@@ -4,7 +4,7 @@
 
 CREATE TABLE public.partida
 (
-    id bigint NOT NULL DEFAULT nextval('partida_id_seq'::regclass),
+    id bigint NOT NULL,
     data_partida timestamp with time zone NOT NULL,
     tipo_jogo character varying(7) COLLATE pg_catalog."default" NOT NULL,
     modalidade character varying(9) COLLATE pg_catalog."default" NOT NULL,
@@ -36,41 +36,38 @@ CREATE TABLE public.partida
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
         DEFERRABLE INITIALLY DEFERRED
-)
+);
 
-TABLESPACE pg_default;
 
-ALTER TABLE public.partida
-    OWNER to postgres;
 -- Index: partida_jogador_1_id_a97c9f6f
 
 -- DROP INDEX public.partida_jogador_1_id_a97c9f6f;
 
 CREATE INDEX partida_jogador_1_id_a97c9f6f
     ON public.partida USING btree
-    (jogador_1_id ASC NULLS LAST)
-    TABLESPACE pg_default;
+    (jogador_1_id ASC NULLS LAST);
+    
 -- Index: partida_jogador_2_id_e6616618
 
 -- DROP INDEX public.partida_jogador_2_id_e6616618;
 
 CREATE INDEX partida_jogador_2_id_e6616618
     ON public.partida USING btree
-    (jogador_2_id ASC NULLS LAST)
-    TABLESPACE pg_default;
--- Index: partida_jogador_adversario_1_id_1bf0e3c1
+    (jogador_2_id ASC NULLS LAST);
+   
+-- Index: partida_jogador_adversario_1_id_1bf0e3c1s
 
 -- DROP INDEX public.partida_jogador_adversario_1_id_1bf0e3c1;
 
 CREATE INDEX partida_jogador_adversario_1_id_1bf0e3c1
     ON public.partida USING btree
-    (jogador_adversario_1_id ASC NULLS LAST)
-    TABLESPACE pg_default;
+    (jogador_adversario_1_id ASC NULLS LAST);
+   
 -- Index: partida_jogador_adversario_2_id_ced2b7cd
 
 -- DROP INDEX public.partida_jogador_adversario_2_id_ced2b7cd;
 
 CREATE INDEX partida_jogador_adversario_2_id_ced2b7cd
     ON public.partida USING btree
-    (jogador_adversario_2_id ASC NULLS LAST)
-    TABLESPACE pg_default;
+    (jogador_adversario_2_id ASC NULLS LAST);
+    

@@ -4,7 +4,7 @@
 
 CREATE TABLE public.jogada
 (
-    id bigint NOT NULL DEFAULT nextval('jogada_id_seq'::regclass),
+    id bigint NOT NULL,
     criado_em timestamp with time zone NOT NULL,
     atualizado_em timestamp with time zone NOT NULL,
     golpe_id bigint NOT NULL,
@@ -33,41 +33,38 @@ CREATE TABLE public.jogada
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
         DEFERRABLE INITIALLY DEFERRED
-)
+);
 
-TABLESPACE pg_default;
 
-ALTER TABLE public.jogada
-    OWNER to postgres;
 -- Index: jogada_golpe_id_7466526d
 
 -- DROP INDEX public.jogada_golpe_id_7466526d;
 
 CREATE INDEX jogada_golpe_id_7466526d
     ON public.jogada USING btree
-    (golpe_id ASC NULLS LAST)
-    TABLESPACE pg_default;
+    (golpe_id ASC NULLS LAST);
+    
 -- Index: jogada_jogador_id_7f5af025
 
 -- DROP INDEX public.jogada_jogador_id_7f5af025;
 
 CREATE INDEX jogada_jogador_id_7f5af025
     ON public.jogada USING btree
-    (jogador_id ASC NULLS LAST)
-    TABLESPACE pg_default;
+    (jogador_id ASC NULLS LAST);
+    
 -- Index: jogada_quadrante_id_a7b51401
 
 -- DROP INDEX public.jogada_quadrante_id_a7b51401;
 
 CREATE INDEX jogada_quadrante_id_a7b51401
     ON public.jogada USING btree
-    (quadrante_id ASC NULLS LAST)
-    TABLESPACE pg_default;
+    (quadrante_id ASC NULLS LAST);
+  
 -- Index: jogada_set_id_b7cbe87f
 
 -- DROP INDEX public.jogada_set_id_b7cbe87f;
 
 CREATE INDEX jogada_set_id_b7cbe87f
     ON public.jogada USING btree
-    (set_id ASC NULLS LAST)
-    TABLESPACE pg_default;
+    (set_id ASC NULLS LAST);
+  
