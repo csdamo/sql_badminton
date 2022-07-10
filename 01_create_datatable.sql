@@ -2,7 +2,7 @@
 
 -- DROP DATABASE badminton;
 
-CREATE DATABASE badminton
+CREATE DATABASE badminton_1
     WITH 
     OWNER = postgres
     ENCODING = 'UTF8'

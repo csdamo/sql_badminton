@@ -4,7 +4,7 @@
 
 CREATE TABLE public.partida
 (
-    id bigint NOT NULL,
+    id SERIAL,
     data_partida timestamp with time zone NOT NULL,
     tipo_jogo character varying(7) COLLATE pg_catalog."default" NOT NULL,
     modalidade character varying(9) COLLATE pg_catalog."default" NOT NULL,

@@ -4,7 +4,7 @@
 
 CREATE TABLE public.jogada
 (
-    id bigint NOT NULL,
+    id SERIAL,
     criado_em timestamp with time zone NOT NULL,
     atualizado_em timestamp with time zone NOT NULL,
     golpe_id bigint NOT NULL,

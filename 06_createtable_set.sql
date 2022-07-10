@@ -4,7 +4,7 @@
 
 CREATE TABLE public.set
 (
-    id bigint NOT NULL,
+    id SERIAL,
     ordem smallint NOT NULL,
     criado_em timestamp with time zone NOT NULL,
     atualizado_em timestamp with time zone NOT NULL,

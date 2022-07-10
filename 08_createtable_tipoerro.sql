@@ -4,7 +4,7 @@
 
 CREATE TABLE public.tipoerro
 (
-    id bigint NOT NULL,
+    id SERIAL,
     descricao_erro character varying(200) COLLATE pg_catalog."default" NOT NULL,
     criado_em timestamp with time zone NOT NULL,
     atualizado_em timestamp with time zone NOT NULL,

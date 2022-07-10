@@ -4,7 +4,7 @@
 
 CREATE TABLE public.jogador
 (
-     id bigint NOT NULL,
+    id SERIAL,
     nome_jogador character varying(200) COLLATE pg_catalog."default" NOT NULL,
     data_nascimento date,
     telefone character varying(12) COLLATE pg_catalog."default",
